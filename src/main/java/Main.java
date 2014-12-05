@@ -17,7 +17,7 @@ public class Main extends HttpServlet {
 
   private void showHome(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-    resp.getWriter().print("Hello from Java!");
+    resp.getWriter().print("<h1>Hello from my wonderful Java app!</h1>");
   }
 
   public static void main(String[] args) throws Exception{
