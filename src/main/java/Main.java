@@ -7,6 +7,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
 
+import static javax.measure.unit.SI.KILOGRAM;
+import javax.measure.quantity.Mass;
+import org.jscience.physics.model.RelativisticModel;
+import org.jscience.physics.amount.Amount;  
+
 public class Main extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -17,8 +22,16 @@ public class Main extends HttpServlet {
 
   private void showHome(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-    System.out.println("Elevate Java application says hello"); 
-    resp.getWriter().print("<h1>Hello from my wonderful Java app!</h1>");
+
+    System.out.println("Calculating with Einstein"); 
+
+    // Energy is compatible with mass (E=mc2)
+    RelativisticModel.select();
+
+    String energy = System.getenv().get("ENERGY");
+
+    Amount<Mass> mass = Amount.valueOf(energy).to(KILOGRAM);
+    resp.getWriter().print("E=mc^2: " + energy + " = " + mass);
   }
 
   public static void main(String[] args) throws Exception{
