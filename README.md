@@ -6,6 +6,10 @@ This application support the Salesforce Elevate [Heroku workshop](http://agilefo
 
 ## Deploying to Heroku
 
+You can use Heroku button to [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy).
+
+Or if you clone the project you can use Heroku toolbelt to create a new Heroku app and deploy the app.
+
 ```sh
 $ heroku create
 $ git push heroku master
